@@ -13,9 +13,8 @@ var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Movi
 //to to copy, push the new book. 
 //This way, the old list is conserved and a new list created.
 function add(arr,bookName) {
-    let newBookList = arr.slice()
+    let newBookList = Array.from(arr)
     var addNewBookToList = newBookList.push(bookName)
-    console.log(newBookList)
     return newBookList;
 }
 
@@ -32,15 +31,11 @@ function add(arr,bookName) {
 //concat the front-end-array and the back-end-array
 function remove(arr, bookName) {
   if (arr.indexOf(bookName) >= 0) {
-    let newerBookList = arr.slice()
+    let newerBookList = Array.from(arr)
     var frontofBookList = newerBookList.splice(0,arr.indexOf(bookName))
-    console.log(frontofBookList)
     var endofBookList = newerBookList.splice(1)
-    console.log(endofBookList)
     newerBookList = frontofBookList.concat(endofBookList)
-    console.log(newerBookList)
     return newerBookList;
-    // Add your code above this line
     }
 }
 
@@ -48,4 +43,24 @@ var newBookList = add(bookList, 'A Brief History of Time');
 var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
 var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 
+console.log("Global array at start")
 console.log(bookList);
+console.log()
+console.log("Adding a new book: ")
+console.log(newBookList);
+console.log()
+console.log("Global array unaffected")
+console.log(bookList)
+console.log()
+console.log("Removing a book: ")
+console.log(newerBookList);
+console.log()
+console.log("Global array unaffected")
+console.log(bookList)
+
+
+
+
+
+
+
