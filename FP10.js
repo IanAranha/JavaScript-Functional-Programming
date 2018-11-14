@@ -10,9 +10,7 @@ Array.prototype.myFilter = function(callback){
         if(callback(a) === true){
             newArray.push(a)
         }
-    })
-        ;
-
+    });
     return newArray;
 };
 
